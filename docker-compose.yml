@@ -1,0 +1,14 @@
+version: "3"
+
+services: 
+  database:
+    container_name: mongoDB
+    restart: always
+    image: mongo
+    ports:
+      - "27018:27017"
+    logging:
+      driver: none
+    volumes:
+      - ./db/data:/data/db
+      - ./db/home:/home
