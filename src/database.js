@@ -1,15 +1,16 @@
-const bodyParser = require('body-parser');
-const express = require('express');
-// const DBMANAGER = require('./controller/mongodb');
+const mongoose = require('mongoose');
+require('dotenv').config();
 
-// DBMANAGER.initialize();
+const { 
+  DB_HOST, 
+  DB_NAME, 
+  DB_PORT 
+} = process.env;
 
-const app = express();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-app.set('port', process.env.PORT || 4000);
-app.use(express.json());
-app.use(require('./routes/api'));
-
-module.exports = app;
+mongoose.set('strictQuery', false);
+mongoose.connect(`mongodb://${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => console.log(`✅ Mongodb "${DB_NAME}" is connected now!`))
+  .catch((error) => console.log('🚫 An error ocurred:', error));

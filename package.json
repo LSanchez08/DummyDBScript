@@ -1,28 +1,36 @@
 {
-  "name": "dummydbscript",
+  "name": "tyerra-ai",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Tyerra data mining repository.",
+  "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx nodemon src/index.js"
+    "dev": "npx nodemon src/index.js",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LSanchez08/DummyDBScript.git"
+    "url": "git+https://github.com/juanidiaz/tyerra-ai.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LSanchez08/DummyDBScript/issues"
+    "url": "https://github.com/juanidiaz/tyerra-ai/issues"
   },
-  "homepage": "https://github.com/LSanchez08/DummyDBScript#readme",
+  "homepage": "https://github.com/juanidiaz/tyerra-ai#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongodb": "^5.1.0",
-    "mongoose": "^7.0.1",
-    "nodemon": "^2.0.21"
+    "lodash": "^4.17.21",
+    "mongodb": "^4.12.1",
+    "mongoose": "^6.8.0",
+    "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   }
 }
